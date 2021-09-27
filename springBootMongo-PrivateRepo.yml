@@ -4,7 +4,7 @@ kind: ReplicationController
 metadata:
   labels:
     name: springboot
-  name: spring-controller
+    namespace: flipkart-ns
 spec:
   replicas: 1
   template:
@@ -15,7 +15,7 @@ spec:
       imagePullSecrets:
       - name: dockerreposecret
       containers:
-      - image: 172.31.43.54:8083/spring-boot-mongo
+      - image: nareshgutha/spring-boot-mongo
         name: springboot
         ports:
         - name: springboot
